@@ -1,5 +1,6 @@
 APPNAME=test-saltstates
 PYTHONVERSION=3.6.9
+EXTRAS="none"
 
 help:
 	@echo "usage: make [command]"
