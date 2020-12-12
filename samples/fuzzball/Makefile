@@ -1,4 +1,4 @@
-APPNAME = fuzzball-states
+APPNAME=fuzzball-states
 PYTHONVERSION=3.6.9
 EXTRAS="none"
 
