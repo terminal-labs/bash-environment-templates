@@ -1,5 +1,6 @@
 APPNAME=test-python-guiapp
 PYTHONVERSION=3.6.9
+EXTRAS="none"
 
 help:
 	@echo "usage: make [command]"
