@@ -1,4 +1,4 @@
-APPNAME=fuzzball-states
+APPNAME=test-interface
 PYTHONVERSION=3.6.9
 EXTRAS="none"
 
@@ -12,15 +12,13 @@ download_bash_environment_manager:
 		sudo su -m $(SUDO_USER) -c "cd .tmp; unzip bash-environment-manager.zip"; \
 	fi
 
-onhost: download_bash_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onhost
+conda: download_bash_environment_manager
+	@sudo bash .tmp/bash-environment-manager-master/types/python/assemble.sh $(APPNAME) $(SUDO_USER) computed conda
+	@sudo bash .tmp/bash-environment-manager-master/types/python/emit_activate.sh $(APPNAME) $(SUDO_USER) computed conda
 
-onguest: download_bash_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onguest
-
-vagrant.onguest: download_bash_environment_manager
+vagrant.conda: download_bash_environment_manager
 	@if test ! -f "Vagrantfile";then \
 		wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
-		chown $(SUDO_USER) Vagrantfile;\
+		chown $(SUDO_USER) Vagrantfile; \
 	fi
-	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) vagrant vagrant-onguest
+	@sudo bash .tmp/bash-environment-manager-master/types/python/assemble.sh $(APPNAME) $(SUDO_USER) computed vagrant-conda
