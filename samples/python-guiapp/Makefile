@@ -1,4 +1,4 @@
-oAPPNAME=test-python-guiapp
+APPNAME=test-python-guiapp
 PYTHONVERSION="3.6.9"
 EXTRAS="none"
 
