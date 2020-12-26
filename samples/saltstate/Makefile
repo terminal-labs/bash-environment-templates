@@ -12,8 +12,8 @@ download_bash_environment_manager:
 		sudo su -m $(SUDO_USER) -c "cd .tmp; unzip bash-environment-manager.zip"; \
 	fi
 
-saltstates: download_bash_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/types/saltstates/assemble.sh $(APPNAME) $(SUDO_USER) computed saltstates
+saltstate: download_bash_environment_manager
+	@sudo bash .tmp/bash-environment-manager-master/types/saltstate/assemble.sh $(APPNAME) $(SUDO_USER) computed saltstates
 
 vagrant.saltstate: download_bash_environment_manager
 	@if test ! -f "Vagrantfile";then \
