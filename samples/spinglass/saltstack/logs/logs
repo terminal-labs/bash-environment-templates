@@ -1,0 +1,38 @@
+2020-12-21 17:16:18,183 [salt.loader      :1804][ERROR   ][73702] Exception raised when processing __virtual__ function for salt.loaded.int.module.mac_system. Module will not be loaded: name '__context__' is not defined
+2020-12-21 17:16:18,183 [salt.loader      :1820][WARNING ][73702] salt.loaded.int.module.mac_system.__virtual__() is wrongly returning `None`. It should either return `True`, `False` or a new name. If you're the developer of the module 'mac_system', please fix this.
+2020-12-21 18:18:29,270 [salt.loader      :1549][ERROR   ][86280] Failed to import grains esxi as the module called exit()
+Traceback (most recent call last):
+  File "/opt/salt/lib/python3.5/site-packages/salt/loader.py", line 1507, in _load_module
+    mod = spec.loader.load_module()
+  File "<frozen importlib._bootstrap_external>", line 396, in _check_name_wrapper
+  File "<frozen importlib._bootstrap_external>", line 817, in load_module
+  File "<frozen importlib._bootstrap_external>", line 676, in load_module
+  File "<frozen importlib._bootstrap>", line 268, in _load_module_shim
+  File "<frozen importlib._bootstrap>", line 693, in _load
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 673, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/opt/salt/lib/python3.5/site-packages/salt/grains/esxi.py", line 16, in <module>
+    import salt.modules.vsphere
+  File "/opt/salt/lib/python3.5/site-packages/salt/modules/vsphere.py", line 2198, in <module>
+    def list_resourcepools(host, username, password, protocol=None, port=None):
+  File "/opt/salt/lib/python3.5/site-packages/salt/utils/decorators/__init__.py", line 71, in __call__
+    frame = inspect.stack()[1][0]
+  File "/opt/salt/lib/python3.5/inspect.py", line 1465, in stack
+    return getouterframes(sys._getframe(1), context)
+  File "/opt/salt/lib/python3.5/inspect.py", line 1442, in getouterframes
+    frameinfo = (frame,) + getframeinfo(frame, context)
+  File "/opt/salt/lib/python3.5/inspect.py", line 1415, in getframeinfo
+    lines, lnum = findsource(frame)
+  File "/opt/salt/lib/python3.5/inspect.py", line 743, in findsource
+    file = getsourcefile(object)
+  File "/opt/salt/lib/python3.5/inspect.py", line 671, in getsourcefile
+    if getattr(getmodule(object, filename), '__loader__', None) is not None:
+  File "/opt/salt/lib/python3.5/inspect.py", line 707, in getmodule
+    for modname, module in list(sys.modules.items()):
+  File "/opt/salt/lib/python3.5/site-packages/salt/scripts.py", line 77, in _handle_signals
+    hardcrash, trace=trace)
+  File "/opt/salt/lib/python3.5/site-packages/salt/scripts.py", line 42, in _handle_interrupt
+    raise exc
+SystemExit: 
+Exiting gracefully on Ctrl-c
