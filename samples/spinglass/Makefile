@@ -1,5 +1,5 @@
-APPNAME=fuzzball-states
-PYTHONVERSION=3.6.9
+APPNAME="spinglass-states"
+PYTHONVERSION="3.6.9"
 EXTRAS="none"
 
 help:
@@ -14,3 +14,5 @@ download_bash_environment_manager:
 
 onhost: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) onhost
+	@sudo bash .tmp/bash-environment-manager-master/types/dpe/emit/emit_activate.sh $(APPNAME) $(SUDO_USER) conda
+	@sudo bash .tmp/bash-environment-manager-master/types/dpe/ops/onhost.sh $(APPNAME) $(SUDO_USER) conda

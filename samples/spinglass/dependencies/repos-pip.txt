@@ -1,3 +1,11 @@
 https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git
+https://github.com/terminal-labs/interface_net-tools.git
+https://github.com/terminal-labs/interface_vbox.git
+https://github.com/terminal-labs/interface_maas.git
+https://github.com/terminal-labs/interface_cumulus-linux.git
+https://github.com/terminal-labs/hologram.git
+https://github.com/terminal-labs/quasar.git
 https://github.com/terminal-labs/rambo.git
 https://github.com/terminal-labs/inflation.git
+https://github.com/terminal-labs/fuzzball.git
+https://github.com/terminal-labs/spinglass.git
