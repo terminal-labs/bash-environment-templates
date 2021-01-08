@@ -12,7 +12,11 @@ download_bash_environment_manager:
 		sudo su -m $(SUDO_USER) -c "cd .tmp; unzip bash-environment-manager.zip"; \
 	fi
 
-conda: download_bash_environment_manager
+conda-aws: download_bash_environment_manager
+	@sudo bash .tmp/bash-environment-manager-master/types/qhub/assemble.sh $(APPNAME) $(SUDO_USER) conda
+	@sudo bash .tmp/bash-environment-manager-master/types/qhub/emit/emit_activate.sh $(APPNAME) $(SUDO_USER) conda
+
+conda-qcp: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/types/qhub/assemble.sh $(APPNAME) $(SUDO_USER) conda
 	@sudo bash .tmp/bash-environment-manager-master/types/qhub/emit/emit_activate.sh $(APPNAME) $(SUDO_USER) conda
 
